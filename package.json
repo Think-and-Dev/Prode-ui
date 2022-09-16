@@ -35,7 +35,9 @@
   "dependencies": {
     "@material-ui/core": "4.11.4",
     "@material-ui/icons": "4.11.2",
+    "@walletconnect/web3-provider": "^1.8.0",
     "classnames": "2.3.1",
+    "ethers": "^5.7.1",
     "moment": "2.29.4",
     "next": "12.2.5",
     "nouislider": "15.1.0",
@@ -44,8 +46,9 @@
     "react-datetime": "3.1.1",
     "react-dom": "18.2.0",
     "react-slick": "0.29.0",
-    "styled-components": "5.3.5",
     "sass": "1.54.4",
+    "styled-components": "5.3.5",
+    "web3modal": "^1.9.9",
     "webpack": "5.74.0"
   },
   "peerDependencies": {
