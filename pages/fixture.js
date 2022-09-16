@@ -13,6 +13,7 @@ import styles from "/styles/jss/nextjs-material-kit/pages/components.js";
 import { Card, Container, Grid, Tab, Tabs } from "@material-ui/core";
 import Brackets from "../pages-sections/Fixture-Sections/Brackets";
 import Positions from "../pages-sections/Fixture-Sections/Positions";
+import Groups from "../components/Groups/Groups";
 
 const useStyles = makeStyles(styles);
 
@@ -77,7 +78,7 @@ export default function Fixture({...props}) {
                 <Tab label="Brackets" {...a11yProps(2)}/>
               </Tabs>
               <TabPanel value={value} index={0}>
-                Grupos
+                <Groups />
               </TabPanel>
               <TabPanel value={value} index={1}>
                 <Positions />
