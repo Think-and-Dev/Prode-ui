@@ -68,7 +68,6 @@ const RenderSeed = ({ breakpoint, seed }) => {
 
 export default function Brackets() {
   
-
   return (
     <div style={{ margin: '32px', textAlign: 'center' }}>
       <Bracket
