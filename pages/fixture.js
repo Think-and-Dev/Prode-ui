@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
 import PropTypes from "prop-types";
-// react components for routing our app without refresh
-import Link from "next/link";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
@@ -11,13 +7,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import Header from "/components/Header/Header.js";
 import HeaderLinks from "/components/Header/HeaderLinks.js";
 import Footer from "/components/Footer/Footer.js";
-import GridContainer from "/components/Grid/GridContainer.js";
-import GridItem from "/components/Grid/GridItem.js";
 import Parallax from "/components/Parallax/Parallax.js";
 
 import styles from "/styles/jss/nextjs-material-kit/pages/components.js";
-import { Box, Card, Tab, Tabs, Typography } from "@material-ui/core";
+import { Card, Container, Grid, Tab, Tabs } from "@material-ui/core";
 import Brackets from "../pages-sections/Fixture-Sections/Brackets";
+import Positions from "../pages-sections/Fixture-Sections/Positions";
 
 const useStyles = makeStyles(styles);
 
@@ -50,7 +45,7 @@ function a11yProps(index) {
   };
 }
 
-export default function Fixture() {
+export default function Fixture({...props}) {
   const classes = useStyles();
   const [value, setValue] = useState(0)
 
@@ -59,21 +54,22 @@ export default function Fixture() {
   };
 
   return (
-    <div>
+    <section>
       <Header
-        brand="Fixture"
+        brand="PRODEX"
         rightLinks={<HeaderLinks />}
         fixed
-        color="transparent"
+        color="secondary"
         changeColorOnScroll={{
           height: 400,
           color: "white"
         }}
+        {...props}
       />
-      <Parallax image="/img/nextjs_header.jpg">
-        <div className={classes.container}>
-          <GridContainer>
-            <GridItem>
+      <Parallax>
+        <Container>
+          <Grid container>
+            <Grid item xs={12}>
               <Card>
               <Tabs value={value} onChange={handleChange} centered>
                 <Tab label="Grupos" {...a11yProps(0)} />
@@ -84,19 +80,19 @@ export default function Fixture() {
                 Grupos
               </TabPanel>
               <TabPanel value={value} index={1}>
-                Posiciones
+                <Positions />
               </TabPanel>
               <TabPanel value={value} index={2}>
                 <Brackets />
               </TabPanel>
               </Card>
-            </GridItem>
-          </GridContainer>
-        </div>
+            </Grid>
+          </Grid>
+          </Container>
       </Parallax>
 
       
       <Footer />
-    </div>
+      </section>
   );
 }

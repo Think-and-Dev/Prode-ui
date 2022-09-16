@@ -59,7 +59,10 @@ const MyPredictionsContent = () => {
                     </Typography>
                   </Grid>
                   <Grid item xs={4}>
-                    <WinnerOrLoser itemIndex={i} result={prediction.prediction} />
+                    <WinnerOrLoser
+                      itemIndex={i}
+                      result={prediction.prediction}
+                    />
                   </Grid>
                 </Grid>
               ))}

@@ -1,0 +1,56 @@
+[
+  {
+    "_id": 0,
+    "title": "Group A",
+    "date": "2022-11-20T12:00:00.000Z",
+    "teams": [
+      {
+        "name": "Qatar",
+        "flag": "🇶🇦",
+        "points": 4
+      },
+      {
+        "name": "Ecuador",
+        "flag": "🇪🇨",
+        "points": 5
+      },
+      {
+        "name": "Senegal",
+        "flag": "🇸🇳",
+        "points": 0
+      },
+      {
+        "name": "Netherlands",
+        "flag": "🇳🇱",
+        "points": 6
+      }
+    ]
+  },
+  {
+    "_id": 2,
+    "title": "Group B",
+    "date": "2022-11-21T09:00:00.000Z",
+    "teams": [
+      {
+        "name": "England",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "points": 10
+      },
+      {
+        "name": "Iran",
+        "flag": "🇮🇷",
+        "points": 1
+      },
+      {
+        "name": "USA",
+        "flag": "🇺🇸",
+        "points": 3
+      },
+      {
+        "name": "Wales",
+        "flag": "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
+        "points": 6
+      }
+    ]
+  }
+]

@@ -136,8 +136,6 @@ nextjs-material-kit
 │   │   └── InfoArea.js
 │   ├── NavPills
 │   │   └── NavPills.js
-│   ├── PageChange
-│   │   └── PageChange.js
 │   ├── Pagination
 │   │   └── Pagination.js
 │   ├── Parallax
