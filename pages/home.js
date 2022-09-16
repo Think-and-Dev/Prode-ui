@@ -36,16 +36,21 @@ export const Home = (props) => {
           <Box style={{ width: 600, height: 600 }}></Box>
         </Background>
       </SectionContainer>
+      <Background img="/img/Logo-Negro.png">
+        <Box style={{ height: 500 }}></Box>
+      </Background>
       <Background color="white">
         <SectionContainer>
-          <Box style={{ width: "70%" }}>
+          <Box style={{ width: "100%" }} id="ong">
+            <Background img="/img/historias.jpeg">
+              <Box style={{ width: 600, height: 600 }}></Box>
+            </Background>
+          </Box>
+          <Box style={{ paddingLeft: 80 }}>
             <Typography variant="h2">
               CON PRODEX VAS A ESTAR APORTANDO POR UNA CAUSA BENÉFICA
             </Typography>
           </Box>
-          <Background img="/img/asoc-piel-2.png">
-            <Box style={{ width: 600, height: 600 }}></Box>
-          </Background>
         </SectionContainer>
       </Background>
     </div>
