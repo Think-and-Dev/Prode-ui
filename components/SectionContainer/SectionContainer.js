@@ -1,16 +1,18 @@
-import { Box } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 
 export const SectionContainer = ({ children, style }) => {
   return (
-    <Box
+    <Container
       style={{
-        width: "40%",
-        padding: "0px 0px 50px 50px",
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill, minmax(30rem, 1fr))",
+        alignItems: "center",
+        padding: "90px 0px 100px 0px",
         ...style
       }}
     >
       {children}
-    </Box>
+    </Container>
   );
 };
 

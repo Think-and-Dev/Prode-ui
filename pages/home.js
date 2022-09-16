@@ -1,6 +1,6 @@
 import { Box, Typography } from "@material-ui/core";
-import ONG from "../components/ONG/Ong";
-import Rules from "../components/Rules/rules";
+import Background from "../components/Background";
+import MainBanner from "../components/MainBanner/MainBanner";
 import SectionContainer from "../components/SectionContainer/SectionContainer";
 import Header from "/components/Header/Header.js";
 import HeaderLinks from "/components/Header/HeaderLinks.js";
@@ -9,15 +9,7 @@ export const Home = (props) => {
   const { ...rest } = props;
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        backgroundImage: "url(/img/qatar_wc_15-3.png)",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        overflow: "auto"
-      }}
-    >
+    <div>
       <Header
         brand="PRODEX"
         rightLinks={<HeaderLinks />}
@@ -29,33 +21,33 @@ export const Home = (props) => {
         }}
         {...rest}
       />
-      <SectionContainer
-        style={{
-          paddingTop: 100
-        }}
-      >
-        <Typography variant="h1">PRODEX</Typography>
-        <Typography variant="h5">
-          Prodex es una App para jugar prode de forma descentralizada, al mismo
-          tiempo que permite aportar por una causa benéfica.
-        </Typography>
-        <Typography variant="h5">
-          La App se diferencia del resto agregando Oráculos de Chainlink para
-          validar los resultados, dándole una grado más de descentralización.
-        </Typography>
-        <Typography variant="h5">
-          Nuestro foco es eliminar la fricción en Web3, a través de una UI
-          intuitiva y fácil de usar. La transparencia es otro punto importante,
-          por lo cual la address de la ONG siempre estará publicada y se podrá
-          consultar.
-        </Typography>
-      </SectionContainer>
+      <Background img="/img/qatar_wc_15-2.png">
+        <SectionContainer>
+          <MainBanner />
+        </SectionContainer>
+      </Background>
       <SectionContainer>
-        <Rules />
+        <Box style={{ width: "70%" }}>
+          <Typography variant="h2">
+            VIVÍ EL MUNDIAL DE FÚTBOL 2022 CON PRODEX JUNTO A TUS AMIGOS
+          </Typography>
+        </Box>
+        <Background img="/img/people.jpeg">
+          <Box style={{ width: 600, height: 600 }}></Box>
+        </Background>
       </SectionContainer>
-      <SectionContainer>
-        <ONG />
-      </SectionContainer>
+      <Background color="white">
+        <SectionContainer>
+          <Box style={{ width: "70%" }}>
+            <Typography variant="h2">
+              CON PRODEX VAS A ESTAR APORTANDO POR UNA CAUSA BENÉFICA
+            </Typography>
+          </Box>
+          <Background img="/img/asoc-piel-2.png">
+            <Box style={{ width: 600, height: 600 }}></Box>
+          </Background>
+        </SectionContainer>
+      </Background>
     </div>
   );
 };
