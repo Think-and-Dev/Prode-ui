@@ -12,12 +12,14 @@ import styles from "/styles/jss/nextjs-material-kit/components/headerLinksStyle.
 import { useWeb3 } from "../../contexts/Web3Context";
 import { StatusConnection } from "../../utils/constants";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
   const classes = useStyles();
   const { connect, disconnect, statusConnection } = useWeb3();
+  const router = useRouter();
 
   const connectWallet = async () => {
     if (statusConnection === StatusConnection.Connected) {
@@ -58,7 +60,12 @@ export default function HeaderLinks(props) {
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button color="transparent" target="_blank" className={classes.navLink}>
+        <Button
+          color="transparent"
+          target="_blank"
+          className={classes.navLink}
+          onClick={() => router.push("myPredictions")}
+        >
           Mis predicciones
         </Button>
       </ListItem>

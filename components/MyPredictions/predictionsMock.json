@@ -1,0 +1,66 @@
+[
+  {
+    "_id": 0,
+    "title": "Group A - Matchday 1/3",
+    "date": "2022-11-20T12:00:00.000Z",
+    "teams": [
+      {
+        "name": "Qatar",
+        "flag": "🇶🇦"
+      },
+      {
+        "name": "Ecuador",
+        "flag":  "🇪🇨"
+      }
+    ],
+    "prediction": 0
+  },
+  {
+    "_id": 1,
+    "title": "Group A - Matchday 1/3",
+    "date": "2022-11-21T12:00:00.000Z",
+    "teams": [
+      {
+        "name": "Senegal",
+        "flag": "🇸🇳"
+      },
+      {
+        "name": "Netherlands",
+        "flag":  "🇳🇱"
+      }
+    ],
+    "prediction": 1
+  },
+  {
+    "_id": 2,
+    "title": "Group B - Matchday 1/3",
+    "date": "2022-11-21T09:00:00.000Z",
+    "teams": [
+      {
+        "name": "England",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+      },
+      {
+        "name": "Iran",
+        "flag":  "🇮🇷"
+      }
+    ],
+    "prediction": 0
+  },
+  {
+    "_id": 3,
+    "title": "Group B - Matchday 1/3",
+    "date": "2022-11-21T03:00:00.000Z",
+    "teams": [
+      {
+        "name": "USA",
+        "flag": "🇺🇸"
+      },
+      {
+        "name": "Wales",
+        "flag":  "🏴󠁧󠁢󠁷󠁬󠁳󠁿"
+      }
+    ],
+    "prediction": 2
+  }
+]
