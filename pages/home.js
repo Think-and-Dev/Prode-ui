@@ -1,4 +1,7 @@
 import { Box, Typography } from "@material-ui/core";
+import Background from "../components/Background";
+import MainBanner from "../components/MainBanner/MainBanner";
+import SectionContainer from "../components/SectionContainer/SectionContainer";
 import Header from "/components/Header/Header.js";
 import HeaderLinks from "/components/Header/HeaderLinks.js";
 
@@ -6,15 +9,7 @@ export const Home = (props) => {
   const { ...rest } = props;
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        backgroundImage: "url(/img/qatar_wc_15.jpg)",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "right bottom"
-      }}
-    >
+    <div>
       <Header
         brand="PRODEX"
         rightLinks={<HeaderLinks />}
@@ -26,23 +21,33 @@ export const Home = (props) => {
         }}
         {...rest}
       />
-      <Box
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 2fr"
-        }}
-      >
-        <Box style={{ padding: 50, paddingTop: 100 }}>
-          <Typography variant="h1">PRODEX</Typography>
-          <Typography variant="h5">
-            PRODEX es un prode mundialista descentralizado que se juega en la
-            red Binance. Cada usuario puede crear su propio prode y competir con
-            otros usuarios. La mitad del premio se reparte entre los usuarios
-            que acierten el resultado de los partidos, la otra mitad será donada
-            a la ONG Asociación piel
+      <Background img="/img/qatar_wc_15-2.png">
+        <SectionContainer>
+          <MainBanner />
+        </SectionContainer>
+      </Background>
+      <SectionContainer>
+        <Box style={{ width: "70%" }}>
+          <Typography variant="h2">
+            VIVÍ EL MUNDIAL DE FÚTBOL 2022 CON PRODEX JUNTO A TUS AMIGOS
           </Typography>
         </Box>
-      </Box>
+        <Background img="/img/people.jpeg">
+          <Box style={{ width: 600, height: 600 }}></Box>
+        </Background>
+      </SectionContainer>
+      <Background color="white">
+        <SectionContainer>
+          <Box style={{ width: "70%" }}>
+            <Typography variant="h2">
+              CON PRODEX VAS A ESTAR APORTANDO POR UNA CAUSA BENÉFICA
+            </Typography>
+          </Box>
+          <Background img="/img/asoc-piel-2.png">
+            <Box style={{ width: 600, height: 600 }}></Box>
+          </Background>
+        </SectionContainer>
+      </Background>
     </div>
   );
 };
