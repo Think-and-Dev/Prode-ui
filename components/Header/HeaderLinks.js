@@ -1,17 +1,11 @@
 /*eslint-disable*/
 import React from "react";
-import Link from "next/link";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 
-// @material-ui/icons
-import { Apps } from "@material-ui/icons";
-
-// core components
-import CustomDropdown from "/components/CustomDropdown/CustomDropdown.js";
 import Button from "/components/CustomButtons/Button.js";
 
 import styles from "/styles/jss/nextjs-material-kit/components/headerLinksStyle.js";
@@ -24,41 +18,36 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   const { connect, disconnect, statusConnection } = useWeb3();
 
-
   const connectWallet = async () => {
     if (statusConnection === StatusConnection.Connected) {
-      await disconnect()
-      return
+      await disconnect();
+      return;
     }
 
-    await connect()
-  }
+    await connect();
+  };
 
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          navDropdown
-          buttonText="Components"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={Apps}
-          dropdownList={[
-            <Link href="/components">
-              <a className={classes.dropdownLink}>All components</a>
-            </Link>,
-            <a
-              href="https://creativetimofficial.github.io/nextjs-material-kit/#/documentation?ref=njsmk-navbar"
-              target="_blank"
-              className={classes.dropdownLink}
-            >
-              Documentation
-            </a>
-          ]}
-        />
+        <Button color="transparent" target="_blank" className={classes.navLink}>
+          Achievments
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button color="transparent" target="_blank" className={classes.navLink}>
+          Mis predicciones
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button color="transparent" target="_blank" className={classes.navLink}>
+          Fixture
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button color="transparent" target="_blank" className={classes.navLink}>
+          Asociación Piel
+        </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
@@ -67,7 +56,9 @@ export default function HeaderLinks(props) {
           color="primary"
           onClick={connectWallet}
         >
-          {statusConnection === StatusConnection.Connected ? 'Desconectar wallet' : "Conectar wallet"}
+          {statusConnection === StatusConnection.Connected
+            ? "Desconectar wallet"
+            : "Conectar wallet"}
         </Button>
       </ListItem>
     </List>
