@@ -1,0 +1,239 @@
+[
+  {
+    "_id": 0,
+    "title": "Group A - Matchday 1/3",
+    "date": "2022-11-20T12:00:00.000Z",
+    "teams": [
+      {
+        "name": "Qatar",
+        "flag": "🇶🇦"
+      },
+      {
+        "name": "Ecuador",
+        "flag":  "🇪🇨"
+      }
+    ]
+  },
+  {
+    "_id": 1,
+    "title": "Group A - Matchday 1/3",
+    "date": "2022-11-21T12:00:00.000Z",
+    "teams": [
+      {
+        "name": "Senegal",
+        "flag": "🇸🇳"
+      },
+      {
+        "name": "Netherlands",
+        "flag":  "🇳🇱"
+      }
+    ]
+  },
+  {
+    "_id": 2,
+    "title": "Group B - Matchday 1/3",
+    "date": "2022-11-21T09:00:00.000Z",
+    "teams": [
+      {
+        "name": "England",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+      },
+      {
+        "name": "Iran",
+        "flag":  "🇮🇷"
+      }
+    ]
+  },
+  {
+    "_id": 3,
+    "title": "Group B - Matchday 1/3",
+    "date": "2022-11-21T03:00:00.000Z",
+    "teams": [
+      {
+        "name": "USA",
+        "flag": "🇺🇸"
+      },
+      {
+        "name": "Wales",
+        "flag":  "🏴󠁧󠁢󠁷󠁬󠁳󠁿"
+      }
+    ]
+  },{
+    "_id": 4,
+    "title": "Group A - Matchday 1/3",
+    "date": "2022-11-22T06:00:00.000Z",
+    "teams": [
+      {
+        "name": "Argentina",
+        "flag": "🇦🇷"
+      },
+      {
+        "name": "Saudi Arabia",
+        "flag":  "🇸🇦"
+      }
+    ]
+  },
+  {
+    "_id": 5,
+    "title": "Group D - Matchday 1/3",
+    "date": "2022-11-21T12:00:00.000Z",
+    "teams": [
+      {
+        "name": "Dinamarca",
+        "flag": "🇩🇰"
+      },
+      {
+        "name": "Tunez",
+        "flag":  "🇹🇳"
+      }
+    ]
+  },
+  {
+    "_id": 6,
+    "title": "Group B - Matchday 1/3",
+    "date": "2022-11-21T09:00:00.000Z",
+    "teams": [
+      {
+        "name": "Mexico",
+        "flag": "🇲🇽"
+      },
+      {
+        "name": "Polonia",
+        "flag":  "🇵🇱"
+      }
+    ]
+  },
+  {
+    "_id": 7,
+    "title": "Group B - Matchday 1/3",
+    "date": "2022-11-21T03:00:00.000Z",
+    "teams": [
+      {
+        "name": "Francia",
+        "flag": "🇫🇷"
+      },
+      {
+        "name": "Australia",
+        "flag":  "🇦🇺"
+      }
+    ]
+  },{
+    "_id": 8,
+    "title": "Group A - Matchday 1/3",
+    "date": "2022-11-20T12:00:00.000Z",
+    "teams": [
+      {
+        "name": "Marruecos",
+        "flag": "🇲🇦"
+      },
+      {
+        "name": "Croacia",
+        "flag":  "🇭🇷"
+      }
+    ]
+  },
+  {
+    "_id": 9,
+    "title": "Group A - Matchday 1/3",
+    "date": "2022-11-21T12:00:00.000Z",
+    "teams": [
+      {
+        "name": "Alemania",
+        "flag": "🇩🇪"
+      },
+      {
+        "name": "Japón",
+        "flag":  "🇯🇵"
+      }
+    ]
+  },
+  {
+    "_id": 10,
+    "title": "Group B - Matchday 1/3",
+    "date": "2022-11-21T09:00:00.000Z",
+    "teams": [
+      {
+        "name": "España",
+        "flag": "🇪🇸"
+      },
+      {
+        "name": "Costa Rica",
+        "flag":  "🇨🇷"
+      }
+    ]
+  },
+  {
+    "_id": 11,
+    "title": "Group B - Matchday 1/3",
+    "date": "2022-11-21T03:00:00.000Z",
+    "teams": [
+      {
+        "name": "Belgica",
+        "flag": "🇧🇪"
+      },
+      {
+        "name": "Canada",
+        "flag":  "🇨🇦"
+      }
+    ]
+  },{
+    "_id": 12,
+    "title": "Group A - Matchday 1/3",
+    "date": "2022-11-20T12:00:00.000Z",
+    "teams": [
+      {
+        "name": "Suiza",
+        "flag": "🇨🇭"
+      },
+      {
+        "name": "Camerún",
+        "flag":  "🇨🇲"
+      }
+    ]
+  },
+  {
+    "_id": 13,
+    "title": "Group A - Matchday 1/3",
+    "date": "2022-11-21T12:00:00.000Z",
+    "teams": [
+      {
+        "name": "Uruguay",
+        "flag": "🇺🇾"
+      },
+      {
+        "name": "Corea del Sur",
+        "flag":  "🇰🇷"
+      }
+    ]
+  },
+  {
+    "_id": 14,
+    "title": "Group B - Matchday 1/3",
+    "date": "2022-11-21T09:00:00.000Z",
+    "teams": [
+      {
+        "name": "Portugal",
+        "flag": "🇵🇹"
+      },
+      {
+        "name": "Ghana",
+        "flag":  "🇬🇭"
+      }
+    ]
+  },
+  {
+    "_id": 15,
+    "title": "Group B - Matchday 1/3",
+    "date": "2022-11-21T03:00:00.000Z",
+    "teams": [
+      {
+        "name": "Brazil",
+        "flag": "🇧🇷"
+      },
+      {
+        "name": "Serbia",
+        "flag":  "🇷🇸"
+      }
+    ]
+  }
+]
