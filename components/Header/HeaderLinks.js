@@ -84,7 +84,7 @@ export default function HeaderLinks(props) {
         <Button
           variant="outlined"
           round
-          color="primary"
+          color="github"
           onClick={connectWallet}
         >
           {statusConnection === StatusConnection.Connected
