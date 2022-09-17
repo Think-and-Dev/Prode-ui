@@ -22,7 +22,13 @@ import Positions from "../pages-sections/Fixture-Sections/Positions";
 import Groups from "../components/Groups/Groups";
 
 const useStyles = makeStyles({...styles, tabs: {
-  marginTop: '24px'
+  marginTop: '24px',
+
+  '& .MuiTabs-root': {
+    position: 'sticky',
+    top: "72px",
+    background: "#e5e5e5"
+  }
 }});
 
 function TabPanel(props) {
@@ -97,6 +103,7 @@ export default function Fixture({ ...props }) {
             </Grid>
           </Grid>
         </Container>
+        <Toolbar />
         <Footer />
       </Box>
     </>
