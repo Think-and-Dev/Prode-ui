@@ -21,7 +21,7 @@ const GroupTable = ({ isPrediction, groups }) => {
   const classes = useStyles();
 
   return (
-    <Container sx={{ mt: 5 }}>
+    <Container>
       <Grid container spacing={2} className={classes.rootGrid}>
         {groups.map((group) => (
           <Grid item xs={12} md={6}>

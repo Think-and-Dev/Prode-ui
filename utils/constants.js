@@ -16,6 +16,7 @@ const PRODEX_ADDRESS = '0xf51744c8ea5Dd910F1717f90658934f89cB16745'
 const RPC_URL_BY_CHAIN_ID = {
   [57]: 'https://bsc-dataseed.binance.org/',
   [97]: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+  [588]: 'https://stardust.metis.io/?owner=588'
 }
 
 const BET_TYPES = {
