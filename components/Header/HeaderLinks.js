@@ -77,7 +77,7 @@ export default function HeaderLinks(props) {
           color="transparent"
           target="_blank"
           className={classes.navLink}
-          onClick={() => router.push("myPredictions")}
+          onClick={() => router.push("predictions")}
         >
           Predicciones
         </Button>

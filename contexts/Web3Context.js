@@ -187,7 +187,7 @@ const Web3ContextProvider = ({ children }) => {
       PRODEX_ADDRESS
     );
 
-    console.log("userALLOWANCE: ", userAllowance)
+    console.log("userALLOWANCE: ", userAllowance, parseInt(userAllowance))
 
     if (!parseInt(userAllowance)) {
       await approveToken();
@@ -197,6 +197,19 @@ const Web3ContextProvider = ({ children }) => {
   }
 
   const startEvent = async () => {
+    const ERC20Contract = new ethers.Contract(TOKEN_ERC20, ERC20.abi, signer);
+
+    const userAllowance = await ERC20Contract.allowance(
+      addressConnected,
+      PRODEX_ADDRESS
+    );
+
+    console.log("userALLOWANCE: ", userAllowance, parseInt(userAllowance))
+
+    if (!parseInt(userAllowance)) {
+      await approveToken();
+    }
+    
     return prodexContract?.startEvent(1)
   }
 

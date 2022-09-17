@@ -41,15 +41,9 @@ const GroupTable = ({ isPrediction, groups }) => {
   const generateBets = async () => {
     const value = formValues[0];
 
-    // try {
-    //   const res = await placeBets([1], [value]);
-    //   console.log("PLACING BETS: ", res);
-    // } catch (err) {
-    //   console.error(err);
-    // }
-
     try {
-      await startEvent();
+      const res = await placeBets([1], [value]);
+      console.log("PLACING BETS: ", res);
     } catch (err) {
       console.error(err);
     }
@@ -58,6 +52,16 @@ const GroupTable = ({ isPrediction, groups }) => {
   return (
     <Container>
       <Grid container spacing={2} className={classes.rootGrid}>
+        <Grid container justify="flex-end">
+          <Button
+            variant="contained"
+            color="primary"
+            disabled={isNaN(Number(formValues[0]))}
+            onClick={generateBets}
+          >
+            Generar apuesta
+          </Button>
+        </Grid>
         {groups.map((group, index) => (
           <Grid item xs={12} md={6}>
             <Card className={classes.predictionCard}>
@@ -100,16 +104,6 @@ const GroupTable = ({ isPrediction, groups }) => {
             </Card>
           </Grid>
         ))}
-        <Grid container justify="flex-end">
-          <Button
-            variant="contained"
-            color="primary"
-            disabled={isNaN(Number(formValues[0]))}
-            onClick={generateBets}
-          >
-            Generar apuesta
-          </Button>
-        </Grid>
       </Grid>
     </Container>
   );
