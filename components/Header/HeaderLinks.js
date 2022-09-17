@@ -33,19 +33,18 @@ export default function HeaderLinks(props) {
     await connect();
   };
 
+  <Link href="#rules">
+  <Button
+    color="transparent"
+    target="_blank"
+    className={classes.navLink}
+  >
+    Reglas
+  </Button>
+</Link>
+
   return (
     <List className={classes.list}>
-      <ListItem className={classes.listItem}>
-        <Link href="#rules">
-          <Button
-            color="transparent"
-            target="_blank"
-            className={classes.navLink}
-          >
-            Reglas
-          </Button>
-        </Link>
-      </ListItem>
       <ListItem className={classes.listItem}>
         <Link href="#ong">
           <Button
@@ -58,8 +57,19 @@ export default function HeaderLinks(props) {
         </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
+      <Link href="#rules">
+        <Button
+          color="transparent"
+          target="_blank"
+          className={classes.navLink}
+        >
+          Reglas
+        </Button>
+      </Link>
+      </ListItem>
+      <ListItem className={classes.listItem}>
         <Button color="transparent" target="_blank" className={classes.navLink}>
-          Achievments
+          Logros
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
@@ -69,7 +79,7 @@ export default function HeaderLinks(props) {
           className={classes.navLink}
           onClick={() => router.push("myPredictions")}
         >
-          Mis predicciones
+          Predicciones
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
