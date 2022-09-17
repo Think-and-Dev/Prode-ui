@@ -21,15 +21,21 @@ import Brackets from "../pages-sections/Fixture-Sections/Brackets";
 import Positions from "../pages-sections/Fixture-Sections/Positions";
 import Groups from "../components/Groups/Groups";
 
-const useStyles = makeStyles({...styles, tabs: {
+const useStyles = makeStyles({...styles, 
+  tabs: {
   marginTop: '24px',
 
   '& .MuiTabs-root': {
     position: 'sticky',
     top: "72px",
-    background: "#e5e5e5"
+    background: "#e5e5e5",
+    zIndex: 2
   }
-}});
+},
+  main: {
+    height: '100vh'
+  }
+});
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -81,7 +87,7 @@ export default function Fixture({ ...props }) {
         }}
         {...props}
       />
-      <Box component="main">
+      <Box component="main" className={classes.main}>
         <Toolbar />
         <Container className={classes.tabs}>
           <Grid container>

@@ -6,7 +6,7 @@ import {
   makeStyles
 } from "@material-ui/core";
 import moment from "moment";
-import WinnerOrLoser from "./WinnerOrLoser"
+import WinnerOrLoser from "./WinnerOrLoser";
 
 const useStyles = makeStyles((theme) => ({
   rootGrid: {
@@ -25,15 +25,15 @@ const GroupTable = ({ isPrediction, groups }) => {
       <Grid container spacing={2} className={classes.rootGrid}>
         {groups.map((group) => (
           <Grid item xs={12} md={6}>
-            <Card className={classes.groupCard}>
-              <Typography variant="h6">{group.title}</Typography>
-              <Typography variant="subtitle1">
+            <Card className={classes.predictionCard}>
+              <Typography variant="subtitle1">{group.title}</Typography>
+              <Typography variant="subtitle2">
                 {moment(group.date).format("LLL")}
               </Typography>
               {group.teams.map((team, i) => (
                 <Grid container>
                   <Grid item xs={isPrediction ? 8 : 12}>
-                    <Typography variant="h5">
+                    <Typography>
                       {team.flag} {team.name}
                     </Typography>
                   </Grid>

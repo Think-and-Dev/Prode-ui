@@ -2,7 +2,9 @@ import Web3Modal from 'web3modal'
 import WalletConnectProvider from '@walletconnect/web3-provider'
 import { ethers } from 'ethers'
 import React, { createContext, useContext, useEffect, useState } from 'react'
-import { RPC_URL_BY_CHAIN_ID, StatusConnection } from '../utils/constants'
+import { PRODEX_ADDRESS, RPC_URL_BY_CHAIN_ID, StatusConnection, TOKEN_ERC20 } from '../utils/constants'
+import ERC20 from '../abis/ERC20.json'
+import Prodex from '../abis/Prodex.json'
 
 export const Web3Context = createContext({})
 
@@ -74,7 +76,6 @@ const Web3ContextProvider = ({ children }) => {
   }
 
   const connect = async () => {
-    console.log('Connecting')
     try {
       if (statusConnection === StatusConnection.Connected) {
         return StatusConnection.Connected
@@ -106,12 +107,38 @@ const Web3ContextProvider = ({ children }) => {
     }
   }
 
+  const approveToken = async () => {
+    try {
+      const ERC20Contract = new ethers.Contract(TOKEN_ERC20, ERC20.abi, signer)
+      const approveTx = await ERC20Contract.approve(PRODEX_ADDRESS, ethers.constants.MaxUint256)
+      const response = await approveTx.wait()
+      return response
+    } catch (err) {
+      throw err
+    }
+  }
+
+  const placeBet = async (eventId, betType) => {
+    const ERC20Contract = new ethers.Contract(TOKEN_ERC20, ERC20.abi, signer)
+    const userAllowance = await ERC20Contract.allowance(addressConnected, payrollContract.address)
+
+    if (!parseInt(userAllowance)) {
+      await approveToken()
+    }
+
+    const ProdexContract = new ethers.Contract(PRODEX_ADDRESS, Prodex.abi, signer)
+    await ProdexContract.placeBet(eventId, betType)
+  }
+
   const contextObj = {
     statusConnection,
     addressConnected,
     signer,
     connect,
     disconnect,
+    chainId,
+    approveToken,
+    placeBet
   }
 
   return <Web3Context.Provider value={contextObj}>{children}</Web3Context.Provider>
