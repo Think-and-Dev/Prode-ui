@@ -14,3 +14,6 @@ Prodex es una App para jugar prode de forma descentralizada, al mismo tiempo que
 ## Demo App
 
 Para mas informacion, podes ver la implementacion de la app a traves del siguiente link: [https://prode-ui.vercel.app/](https://prode-ui.vercel.app/)
+
+## Youtube demo App
+https://youtu.be/dcCl_bHmPIc
