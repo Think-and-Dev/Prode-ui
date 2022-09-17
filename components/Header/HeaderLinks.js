@@ -13,12 +13,15 @@ import { useWeb3 } from "../../contexts/Web3Context";
 import { StatusConnection } from "../../utils/constants";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { getAddressFormatted } from "../../utils/commons";
+import AccountBalanceWallet from "@material-ui/icons/AccountBalanceWallet";
+import { Chip } from "@material-ui/core";
 
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
   const classes = useStyles();
-  const { connect, disconnect, statusConnection } = useWeb3();
+  const { connect, disconnect, statusConnection, addressConnected } = useWeb3();
   const router = useRouter();
 
   const connectWallet = async () => {
@@ -81,6 +84,9 @@ export default function HeaderLinks(props) {
         </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
+        <Chip className={classes.chip} label="Metis Stardust" variant="outlined" />
+      </ListItem>
+      <ListItem className={classes.listItem}>
         <Button
           variant="outlined"
           round
@@ -88,7 +94,10 @@ export default function HeaderLinks(props) {
           onClick={connectWallet}
         >
           {statusConnection === StatusConnection.Connected
-            ? "Desconectar wallet"
+            ? <>
+            <AccountBalanceWallet /> {" "}
+            {getAddressFormatted(addressConnected)}
+            </>
             : "Conectar wallet"}
         </Button>
       </ListItem>

@@ -11,3 +11,7 @@ export const getResultColor = (itemIndex, result) => {
 
   return result === itemIndex ? "success" : "error"
 }
+
+export const getAddressFormatted = (address) => {
+  return address && `${address.slice(0, 5)}...${address.slice(address.length - 4)}`
+}

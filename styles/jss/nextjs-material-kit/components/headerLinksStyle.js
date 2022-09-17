@@ -119,6 +119,9 @@ const headerLinksStyle = (theme) => ({
   ...tooltip,
   marginRight5: {
     marginRight: "5px"
+  },
+  chip: {
+    margin: "9px",
   }
 });
 
