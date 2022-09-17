@@ -5,13 +5,13 @@ const StatusConnection = {
 }
 
 const RESULTS = {
-  winner: "Ganador",
-  loser: "Perdedor",
-  tie: "Empate"
+  0: "Ganador",
+  1: "Perdedor",
+  2: "Empate"
 }
 
-const TOKEN_ERC20 = ''
-const PRODEX_ADDRESS = '0xf51744c8ea5Dd910F1717f90658934f89cB16745'
+const TOKEN_ERC20 = '0x620183085B03064BE38529Df28Bf52ccF251f084'
+const PRODEX_ADDRESS = '0xBd1aE35B4d658c332299B8Cd1C9601E00A0E41E1'
 
 const RPC_URL_BY_CHAIN_ID = {
   [57]: 'https://bsc-dataseed.binance.org/',

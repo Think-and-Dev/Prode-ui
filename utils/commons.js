@@ -1,15 +1,23 @@
-import { RESULTS } from "./constants"
+import { BET_TYPES, RESULTS } from "./constants"
 
 export const getResultText = (itemIndex, result) => {
-  if (result === 2) return RESULTS.tie
+  if (!isNaN(Number(result))) {
+    if (result === 2) return RESULTS[BET_TYPES.TIE]
 
-  return result === itemIndex ? RESULTS.winner : RESULTS.loser
+    return result === itemIndex ? RESULTS[BET_TYPES.WIN_FIRST] : RESULTS[BET_TYPES.WIN_SECOND]
+  }
+  
+  return '(No seleccionado)'
 }
 
 export const getResultColor = (itemIndex, result) => {
-  if (result === 2) return "warning"
+  if (!isNaN(Number(result))) {
+    if (result === 2) return "warning"
+  
+    return result === itemIndex ? "success" : "error"
+  }
 
-  return result === itemIndex ? "success" : "error"
+  return 'default'
 }
 
 export const getAddressFormatted = (address) => {
