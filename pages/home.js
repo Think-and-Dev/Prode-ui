@@ -4,6 +4,7 @@ import MainBanner from "../components/MainBanner/MainBanner";
 import SectionContainer from "../components/SectionContainer/SectionContainer";
 import Header from "/components/Header/Header.js";
 import HeaderLinks from "/components/Header/HeaderLinks.js";
+import Footer from "/components/Footer/Footer.js";
 
 export const Home = (props) => {
   const { ...rest } = props;
@@ -52,6 +53,34 @@ export const Home = (props) => {
             </Typography>
           </Box>
         </SectionContainer>
+      </Background>
+      {/* <SectionContainer style={{ padding: "0px" }}> */}
+      <SectionContainer
+        style={{
+          paddingBottom: "0px"
+        }}
+      >
+        <Box id="rules">
+          <Typography variant="h2">Reglamento PRODEX</Typography>
+          <Typography variant="h6">Simple, sencillo, claro.</Typography>
+        </Box>
+      </SectionContainer>
+      <SectionContainer
+        style={{
+          gridTemplateColumns: "1fr 1fr 1fr",
+          padding: "10px 0px 90px 0px"
+        }}
+      >
+        <Typography variant="button">
+          * Monto de apuesta fijo por evento
+        </Typography>
+        <Typography variant="button">* Una apuesta por evento</Typography>
+        <Typography variant="button">
+          * Ganadores por una mínima cantidad de puntos alcanzado
+        </Typography>
+      </SectionContainer>
+      <Background color="white">
+        <Footer />
       </Background>
     </div>
   );
