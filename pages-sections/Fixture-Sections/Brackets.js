@@ -1,3 +1,4 @@
+import { Typography } from '@material-ui/core';
 import React from 'react';
 import { Bracket, Seed, SeedItem, SeedTeam, SeedTime, RoundProps, RenderSeedProps } from 'react-brackets';
 
@@ -8,7 +9,7 @@ const rounds = [
       {},
       {
         id: 1,
-        date: new Date().toDateString(),
+        date: new Date().toLocaleString(),
         teams: [
           { id: 1, name: 'The Leons', score: 2 },
           // { id: 3, name: 'Kitties', score: 6 },
@@ -17,7 +18,7 @@ const rounds = [
       {},
       {
         id: 1,
-        date: new Date().toDateString(),
+        date: new Date().toLocaleString(),
         teams: [
           { id: 1, name: 'The Leons', score: 2 },
           // { id: 3, name: 'Kitties', score: 6 },
@@ -29,7 +30,7 @@ const rounds = [
     title: 'Round 2',
     seeds: [...new Array(2)].fill({
       id: 1,
-      date: new Date().toDateString(),
+      date: new Date().toLocaleString(),
       teams: [
         { id: 1, name: 'The Leons', score: 2 },
         { id: 3, name: 'Kitties', score: 6 },
@@ -40,7 +41,7 @@ const rounds = [
     title: 'Round 3',
     seeds: [...new Array(1)].fill({
       id: 1,
-      date: new Date().toDateString(),
+      date: new Date().toLocaleString(),
       teams: [
         { id: 1, name: 'The Leons', score: 2 },
         { id: 3, name: 'Kitties', score: 6 },
@@ -54,13 +55,15 @@ const RenderSeed = ({ breakpoint, seed }) => {
     <Seed mobileBreakpoint={breakpoint}>
       <SeedItem style={{ width: '100%' }}>
         <div>
-          <SeedTeam>{seed.teams?.[0].name || '-----------'}</SeedTeam>
+          <SeedTeam>
+            {seed.teams?.[0].name || '-----------'}
+          </SeedTeam>
           <div style={{ height: 1, backgroundColor: '#707070' }}></div>
           <SeedTeam>{seed.teams?.[1]?.name || '-----------'}</SeedTeam>
         </div>
       </SeedItem>
       <SeedTime mobileBreakpoint={breakpoint} style={{ fontSize: 9 }}>
-        {seed.date}
+        <Typography variant='caption'>{seed.date}</Typography>
       </SeedTime>
     </Seed>
   );

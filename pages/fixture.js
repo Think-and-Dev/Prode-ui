@@ -7,15 +7,23 @@ import { makeStyles } from "@material-ui/core/styles";
 import Header from "/components/Header/Header.js";
 import HeaderLinks from "/components/Header/HeaderLinks.js";
 import Footer from "/components/Footer/Footer.js";
-import Parallax from "/components/Parallax/Parallax.js";
-
 import styles from "/styles/jss/nextjs-material-kit/pages/components.js";
-import { Card, Container, Grid, Tab, Tabs } from "@material-ui/core";
+import {
+  Box,
+  Card,
+  Container,
+  Grid,
+  Tab,
+  Tabs,
+  Toolbar
+} from "@material-ui/core";
 import Brackets from "../pages-sections/Fixture-Sections/Brackets";
 import Positions from "../pages-sections/Fixture-Sections/Positions";
 import Groups from "../components/Groups/Groups";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles({...styles, tabs: {
+  marginTop: '24px'
+}});
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -36,26 +44,26 @@ function TabPanel(props) {
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired
 };
 
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`
   };
 }
 
-export default function Fixture({...props}) {
+export default function Fixture({ ...props }) {
   const classes = useStyles();
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState(0);
 
   const handleChange = (_event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <section>
+    <>
       <Header
         brand="PRODEX"
         rightLinks={<HeaderLinks />}
@@ -67,15 +75,15 @@ export default function Fixture({...props}) {
         }}
         {...props}
       />
-      <Parallax>
-        <Container>
+      <Box component="main">
+        <Toolbar />
+        <Container className={classes.tabs}>
           <Grid container>
             <Grid item xs={12}>
-              <Card>
               <Tabs value={value} onChange={handleChange} centered>
                 <Tab label="Grupos" {...a11yProps(0)} />
                 <Tab label="Posiciones" {...a11yProps(1)} />
-                <Tab label="Brackets" {...a11yProps(2)}/>
+                <Tab label="Brackets" {...a11yProps(2)} />
               </Tabs>
               <TabPanel value={value} index={0}>
                 <Groups />
@@ -86,14 +94,11 @@ export default function Fixture({...props}) {
               <TabPanel value={value} index={2}>
                 <Brackets />
               </TabPanel>
-              </Card>
             </Grid>
           </Grid>
-          </Container>
-      </Parallax>
-
-      
-      <Footer />
-      </section>
+        </Container>
+        <Footer />
+      </Box>
+    </>
   );
 }
