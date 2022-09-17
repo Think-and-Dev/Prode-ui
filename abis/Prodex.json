@@ -1,5 +1,5 @@
 {
-  "address": "0xf51744c8ea5Dd910F1717f90658934f89cB16745",
+  "address": "0xf1038C1997372d9089CA83e0e253fAA3e3649C03",
   "abi": [
     {
       "inputs": [
@@ -32,6 +32,11 @@
           "internalType": "uint256",
           "name": "_minWinnerPoints",
           "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_betAmount",
+          "type": "uint256"
         }
       ],
       "stateMutability": "nonpayable",
@@ -57,12 +62,6 @@
           "internalType": "enum IProde.BetOdd",
           "name": "bet",
           "type": "uint8"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
         }
       ],
       "name": "BetPlaced",
@@ -207,6 +206,12 @@
           "indexed": false,
           "internalType": "uint256",
           "name": "minWinnerPoints",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "betAmount",
           "type": "uint256"
         }
       ],
@@ -392,7 +397,7 @@
               "type": "uint8"
             }
           ],
-          "internalType": "struct Prodex.Event",
+          "internalType": "struct IProde.Event",
           "name": "_event",
           "type": "tuple"
         }
@@ -473,7 +478,7 @@
               "type": "uint8"
             }
           ],
-          "internalType": "struct Prodex.Event[]",
+          "internalType": "struct IProde.Event[]",
           "name": "_events",
           "type": "tuple[]"
         }
@@ -481,6 +486,19 @@
       "name": "addEvents",
       "outputs": [],
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "betAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -721,14 +739,27 @@
           "internalType": "enum IProde.BetOdd",
           "name": "bet",
           "type": "uint8"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
         }
       ],
       "name": "placeBet",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "betIds",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "enum IProde.BetOdd[]",
+          "name": "bets",
+          "type": "uint8[]"
+        }
+      ],
+      "name": "placeBets",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -854,9 +885,9 @@
       "name": "usersByEvent",
       "outputs": [
         {
-          "internalType": "uint256",
+          "internalType": "bool",
           "name": "",
-          "type": "uint256"
+          "type": "bool"
         }
       ],
       "stateMutability": "view",

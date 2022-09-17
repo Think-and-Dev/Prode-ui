@@ -149,19 +149,14 @@ const Web3ContextProvider = ({ children }) => {
     const ERC20Contract = new ethers.Contract(TOKEN_ERC20, ERC20.abi, signer);
     const userAllowance = await ERC20Contract.allowance(
       addressConnected,
-      payrollContract.address
+      prodexContract.address
     );
 
     if (!parseInt(userAllowance)) {
       await approveToken();
     }
 
-    const ProdexContract = new ethers.Contract(
-      PRODEX_ADDRESS,
-      Prodex.abi,
-      signer
-    );
-    await ProdexContract.placeBet(eventId, betType);
+    await prodexContract?.placeBet(eventId, betType);
   };
 
   const getNGODonationPercentage = async () => {
@@ -178,6 +173,44 @@ const Web3ContextProvider = ({ children }) => {
 
   const getMinWinnerPoints = async () => {
     return prodexContract?.minWinnerPoints();
+  }
+
+  const placeBets = async (eventIds, betTypes) => {
+    console.log('PLACING BETS: ')
+    console.log('EVENT IDs: ', eventIds);
+    console.log('BET TYPES: ', betTypes);
+
+    const ERC20Contract = new ethers.Contract(TOKEN_ERC20, ERC20.abi, signer);
+
+    const userAllowance = await ERC20Contract.allowance(
+      addressConnected,
+      PRODEX_ADDRESS
+    );
+
+    console.log("userALLOWANCE: ", userAllowance, parseInt(userAllowance))
+
+    if (!parseInt(userAllowance)) {
+      await approveToken();
+    }
+
+    return prodexContract?.placeBets(eventIds, betTypes)
+  }
+
+  const startEvent = async () => {
+    const ERC20Contract = new ethers.Contract(TOKEN_ERC20, ERC20.abi, signer);
+
+    const userAllowance = await ERC20Contract.allowance(
+      addressConnected,
+      PRODEX_ADDRESS
+    );
+
+    console.log("userALLOWANCE: ", userAllowance, parseInt(userAllowance))
+
+    if (!parseInt(userAllowance)) {
+      await approveToken();
+    }
+    
+    return prodexContract?.startEvent(1)
   }
 
   // uint256 public immutable maxEvents;
@@ -198,7 +231,9 @@ const Web3ContextProvider = ({ children }) => {
     getNGODonationPercentage,
     getGlobalPoolSize,
     getNGOCurrentPoolPrize,
-    getMinWinnerPoints
+    getMinWinnerPoints,
+    placeBets,
+    startEvent
   };
 
   return (
